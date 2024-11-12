@@ -1,6 +1,20 @@
 # app.py
 
+import subprocess
 import streamlit as st
+
+# Function to install packages
+def install_packages():
+    try:
+        import langchain
+        import llama_cpp
+    except ImportError:
+        subprocess.run(["pip", "install", "langchain", "llama-cpp-python"])
+
+# Run the installation check
+install_packages()
+
+# Import the required modules after ensuring they're installed
 from langchain.llms import LlamaCpp
 
 # Initialize the LlamaCpp model
