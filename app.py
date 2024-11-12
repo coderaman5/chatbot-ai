@@ -40,12 +40,7 @@ if user_input:
         prompt = f"<|user|>\n{user_input}<|end|>\n<|assistant|>\n"
         
         # Generate response from the model
-        response = llm(
-            prompt,
-            max_tokens=256,
-            stop="<|end|>",
-            echo=False,
-        )
+        response = llm.predict(prompt=prompt, stop=["<|end|>"])
         
         # Add model's response to chat history
         st.session_state.chat_history.append(("Assistant", response))
