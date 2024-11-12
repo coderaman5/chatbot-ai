@@ -1,4 +1,0 @@
-streamlit
-langchain
-openai
-llama-cpp-python
